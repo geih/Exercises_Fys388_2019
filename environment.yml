@@ -2,6 +2,7 @@ name: lfpy
 channels:
   - conda-forge
 dependencies:
+  - nest-simulator=*=mpi_openmpi*
   - python=3
   - numpy
   - scipy
