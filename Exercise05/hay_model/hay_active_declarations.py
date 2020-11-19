@@ -11,13 +11,13 @@ def make_cell_uniform():
     for sec in nrn.allsec():
         for seg in sec:
             seg.e_pas = Vrest
-            if nrn.ismembrane("na_ion"):
+            if nrn.ismembrane("na_ion", sec=sec):
                 seg.e_pas += seg.ina/seg.g_pas
-            if nrn.ismembrane("k_ion"):
+            if nrn.ismembrane("k_ion", sec=sec):
                 seg.e_pas += seg.ik/seg.g_pas
-            if nrn.ismembrane("ca_ion"):
+            if nrn.ismembrane("ca_ion", sec=sec):
                 seg.e_pas += seg.ica/seg.g_pas
-            if nrn.ismembrane("Ih"):
+            if nrn.ismembrane("Ih", sec=sec):
                 seg.e_pas += seg.ihcn_Ih/seg.g_pas
 
 
